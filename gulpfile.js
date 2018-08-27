@@ -5,6 +5,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var shell       = require('gulp-shell');
 var sourcemaps  = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function () {
     "use strict";
@@ -16,10 +17,23 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('demo'));
 });
 
-gulp.task('watch', function () {
+// having sass as a dependency for the refresh task insures that they are executed before browerSync is run
+// reference: browsersync.io/docs/gulp
+gulp.task("refresh", ["sass"], function (done) {
     "use strict";
-    gulp.watch(['base-styles/*.scss'], ['sass']);
+    browserSync.reload();
+    done();
 });
 
-gulp.task('default', ['sass', 'watch']);
+// the gulp default task starts browserSync and the watch task
+gulp.task("default", ["sass"], function () {
+    "use strict";
+    browserSync.init({
+        server: {
+            baseDir: "demo"
+        },
+        open: false
+    });
 
+    gulp.watch(['base-styles/*.scss', 'demo/index.html'], ['refresh']);
+});

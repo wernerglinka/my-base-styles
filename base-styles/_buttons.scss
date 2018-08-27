@@ -3,10 +3,10 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background-color: $color-primary;
-  border: 0.1rem solid $color-primary;
+  background-color: $button-default-background-color;
+  border: 0.1rem solid $button-default-border-color;
   border-radius: 0.4rem;
-  color: $text-color;
+  color: $button-default-text-color;
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
@@ -19,11 +19,12 @@ input[type='submit'] {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: background 0.4s, 
+              color 0.4s;
   &:focus,
   &:hover {
-    background-color: $color-secondary;
-    border-color: $color-secondary;
-    color: $button-text-color;
+    background-color: $button-default-background-hover-color;
+    color: $button-default-text-hover-color;
     outline: 0;
   }
   &[disabled] {
@@ -31,41 +32,52 @@ input[type='submit'] {
     opacity: 0.5;
     &:focus,
     &:hover {
-      background-color: $color-primary;
-      border-color: $color-primary;
+      background-color: $button-default-background-color;
     }
   }
-  &.btn-outline {
-    background-color: transparent;
-    color: $color-primary;
+
+  // primary button to be used with submit or CTA
+  &.btn-primary {
+    background-color: $button-primary-background-color;
+    border-color: $button-primary-border-color;
+    color: $button-primary-text-color;
     &:focus,
     &:hover {
-      background-color: transparent;
-      border-color: $color-secondary;
-      color: $color-secondary;
+      background-color: darken($button-primary-background-color, 10%);
+      border-color: darken($button-primary-border-color, 10%);
+      color: $button-primary-text-color;
     }
     &[disabled] {
+      cursor: default;
+      opacity: 0.5;
       &:focus,
       &:hover {
-        border-color: inherit;
-        color: $color-primary;
+        background-color: $button-primary-background-color;
+        border-color: $button-primary-border-color;
+        color: $button-primary-text-color;
       }
     }
   }
-  &.btn-clear {
-    background-color: transparent;
-    border-color: transparent;
-    color: $color-primary;
+
+  // secondary button to be used as clear on forms etc.
+  &.btn-secondary {
+    background-color: $button-secondary-background-color;
+    border-color: $button-secondary-border-color;
+    color: $button-secondary-text-color;
     &:focus,
     &:hover {
-      background-color: transparent;
-      border-color: transparent;
-      color: $color-secondary;
+      background-color: darken($button-secondary-background-color, 10%);
+      border-color: darken($button-secondary-border-color, 10%);
+      color: $button-secondary-text-color;
     }
     &[disabled] {
+      cursor: default;
+      opacity: 0.5;
       &:focus,
       &:hover {
-        color: $color-primary;
+        background-color: $button-secondary-background-color;
+        border-color: $button-secondary-border-color;
+        color: $button-secondary-text-color;
       }
     }
   }

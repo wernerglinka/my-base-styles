@@ -1,11 +1,26 @@
 // template color scheme
-$color-primary: red;
+$color-primary: #ed3e44;
 $color-secondary: gray;
-$text-color: #333 !default;
-$border-color: #ccc !default;
-$button-text-color: white;
+$text-color: rgb(66,66,66);
+$text-hover-color: #222;
+$border-color: #ccc;
 $divider-color: #f0f0f0;
 $code-background-color: #f5f5f5;
+
+// buttons
+$button-default-background-color: transparent;
+$button-default-border-color: $text-color;
+$button-default-text-color: $text-color;
+$button-default-background-hover-color: #f0f0f0;
+$button-default-text-hover-color: $text-hover-color;
+
+$button-primary-background-color: rgb(63,81,181);
+$button-primary-border-color: rgb(63,81,181);
+$button-primary-text-color: rgb(255, 255, 255);
+
+$button-secondary-background-color: rgb(24,255,255);
+$button-secondary-border-color: rgb(24,255,255);
+$button-secondary-text-color: rgb(66,66,66);
 
 // animations
 $animation-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
