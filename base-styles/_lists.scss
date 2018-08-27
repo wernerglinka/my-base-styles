@@ -1,0 +1,17 @@
+dl,
+ol,
+ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+ul {
+    &.list-inline {
+        li {
+            display: inline-block;
+        }
+    }
+    &.list-nostyle {
+        list-style: none;
+    }
+}

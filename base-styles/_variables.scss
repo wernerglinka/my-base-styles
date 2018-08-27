@@ -1,0 +1,15 @@
+// template color scheme
+$color-primary: red;
+$color-secondary: gray;
+$text-color: #333 !default;
+$border-color: #ccc !default;
+$button-text-color: white;
+$divider-color: #f0f0f0;
+$code-background-color: #f5f5f5;
+
+// animations
+$animation-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$animation-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1) !default;
+$animation-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1) !default;
+
+$animation-default: $animation-fast-out-slow-in !default;

@@ -1,0 +1,18 @@
+code {
+    background: $code-background-color;
+    font-size: 86%;
+    margin: 0 0.2rem;
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+  }
+  
+  pre {
+    background: $code-background-color;
+    overflow-y: hidden;
+    & > code {
+      border-radius: 0;
+      display: block;
+      padding: 1rem 1.5rem;
+      white-space: pre;
+    }
+  }
